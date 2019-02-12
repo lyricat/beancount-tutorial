@@ -1,4 +1,9 @@
-# 把自己当做一家公司 - 使用 beancount 记账 (1)
+---
+title: 握着你的手写最简单的 Beancount 账本
+brief: 从几个不同应用场景，基于实际使用案例，介绍 Beancount 的用法。
+date: 2019-01-10
+tags: ["Beancount", "复式记账", "Beancount 教程"]
+---
 
 在上一篇中，我提到了为什么要记账、使用复式记账的好处，以及作为一个程序员，对财务有更高要求时，要使用 Beancount。
 
