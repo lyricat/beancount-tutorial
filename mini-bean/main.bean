@@ -1,0 +1,12 @@
+option "title" "我的账本"
+option "operating_currency" "CNY"
+
+1900-01-01 custom "fava-option" "language" "zh"
+
+include "accounts.bean"
+
+; 每年账本
+include "2018.bean"
+
+
+

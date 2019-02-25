@@ -1,0 +1,64 @@
+2018-05-15 * "东家" "发奖金 4888 元"
+    Income:Master 		            -4888 CNY
+    Assets:DebitCard 		        
+
+2018-05-05 * "东家" "发工资 8000 元"
+    Income:Master 		            -11056 CNY
+    Expenses:Gov:Tax 		            +48 CNY
+    Expenses:Gov:Insurance          +840 CNY
+    Expenses:Gov:MasterInsurance    +2496 CNY
+    Assets:HouseFund:SH             +560 CNY
+    Assets:Gov:MasterHouseFund      +560 CNY
+    Assets:DebitCard 		        +6552 CNY  
+
+2018-04-05 * "东家" "发工资 8000 元"
+    Income:Master 		            -11056 CNY
+    Expenses:Gov:Tax 		            +48 CNY
+    Expenses:Gov:Insurance          +840 CNY
+    Expenses:Gov:MasterInsurance    +2496 CNY
+    Assets:HouseFund:SH            +560 CNY
+    Assets:Gov:MasterHouseFund      +560 CNY
+    Assets:DebitCard 		        +6552 CNY
+
+2018-03-06 * "公交公司" "充值"
+    Assets:Cash:Wallet			            -200 CNY
+    Expenses:Traffic:Public          
+
+2018-03-06 event "办理信用卡" "New York, USA"
+
+2018-03-05 * "东家" "发工资 8000 元"
+    Income:Master 		            -11056 CNY
+    Expenses:Gov:Tax 		            +48 CNY
+    Expenses:Gov:Insurance          +840 CNY
+    Expenses:Gov:MasterInsurance    +2496 CNY
+    Assets:HouseFund:SH            +560 CNY
+    Assets:Gov:MasterHouseFund      +560 CNY
+    Assets:DebitCard 		        +6552 CNY
+
+2018-02-06 * "公交公司" "充值"
+    Assets:Cash:Wallet			            -50 CNY
+    Expenses:Traffic:Public          
+
+2018-02-06 * "宜家" "购置家具"
+    Assets:Cash:Wallet			            -1200 CNY
+    Expenses:Householding:IKEA   
+
+2018-02-05 * "东家" "发工资 8000 元"
+    Income:Master 		            -11056 CNY
+    Expenses:Gov:Tax 		            +48 CNY
+    Expenses:Gov:Insurance          +840 CNY
+    Expenses:Gov:MasterInsurance    +2496 CNY
+    Assets:HouseFund:SH            +560 CNY
+    Assets:Gov:MasterHouseFund      +560 CNY
+    Assets:DebitCard 		        +6552 CNY
+
+2018-01-26 event "入职" "New York, USA"
+
+2018-01-26 * "小桔科技" "打车" #Didi
+    Assets:Cash:Wallet			       -15.00 CNY
+    Expenses:Traffic:Taxi       15.00 CNY
+
+2018-01-25 * "初始化"
+    Equity:OpenBalance			
+    Assets:Cash:Wallet			        100.00 CNY
+

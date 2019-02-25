@@ -1,13 +1,13 @@
 ---
 title: 握着你的手写最简单的 Beancount 账本
-brief: 从几个不同应用场景，基于实际使用案例，介绍 Beancount 的用法。
+brief: 介绍 Beancount 的安装和最简单的账本组成。
 date: 2019-01-10
 tags: ["Beancount", "复式记账", "Beancount 教程"]
 ---
 
-在上一篇中，我提到了为什么要记账、使用复式记账的好处，以及作为一个程序员，对财务有更高要求时，要使用 Beancount。
+在[上一篇](beancount-tutorial-0)中，我提到了为什么要记账、使用复式记账的好处，以及作为一个程序员，对财务有更高要求时，要使用 Beancount。
 
-这些都是铺垫，接下来的文章我将会从几个不同应用场景，基于实际使用案例，介绍 Beancount 的用法。
+本篇将从 Beancount 的安装开始，介绍如何编写一个最简单的 Beancount 账本。
 
 ---
 
@@ -25,7 +25,7 @@ $ pip install beancount
 
 ## 开始记账
 
-Beancount 账本由纯文本文件构成。你可以使用 `include "文件名"` 语法来自由组织账本文件。这里我提供三个文件组成的最简单账本：
+Beancount 账本由纯文本文件构成。你可以使用 `include "文件名"` 语法来自由组织账本文件。这里我提供三个文件组成的最简单账本（参见 [Github mini-bean 目录](https://github.com/lyricat/beancount-tutorial/)）：
 
 ### accounts.bean
 
@@ -49,7 +49,6 @@ accounts.bean：用来管理不同的账户，在此我开了三个账户，分�
 而不是用含糊的 `Expenses:Traffic`来记公交的支出
 
 ```beancount
-1990-01-01 open Expenses:Traffic:Didi
 1990-01-01 open Expenses:Traffic:Taxi
 1990-01-01 open Expenses:Traffic
 ```
@@ -101,13 +100,11 @@ accounts.bean：用来管理不同的账户，在此我开了三个账户，分�
 main.bean：主入口文件，使用 include 语句来包含 accounts.bean 和 2018.bean
 
 ```beancount
-; 设定账本标题，会出现在 fava 的左上角
+; 设定账本标题
 option "title" "我的账本"
 
 ; 设定账本主货币
 option "operating_currency" "CNY"
-option "operating_currency" "USD"
-option "operating_currency" "BTC"
 
 ; 所有使用中的账户都写在 accounts.bean
 include "accounts.bean"
@@ -116,63 +113,7 @@ include "accounts.bean"
 include "2018.bean"
 ```
 
-在 main.bean 中，我首先进行了一些设置。使用 `options` 语句，设定 beancount 的基础行为。例如，我设定了标题，还设定了账本使用的主货币为人民币 `CNY`，美元 `USD` 和比特币 `BTC`，这是因为我交易美国股票和数字货币。
+在 main.bean 中，我首先进行了一些设置。使用 `options` 语句，设定 beancount 的基础行为。例如，我设定了标题，还设定了账本使用的主货币为人民币 `CNY`。
 
 最后，使用 `include` 语法将刚才我们提到账户定义 `accounts.bean`和具体到月份的账本文件 `2018.bean`包含进来。
-
-## 使用 Beancount 查询账本
-
-Beancount 的命令都以 bean-* 开头。例如，我们可以在终端中使用 `bean-report` 来查询当前账户的净值。查询一下刚才我们建立的测试账本：
-
-```bash
-$ bean-report main.bean networth
-Currency  Net Worth
---------  ---------
-CNY           85.00
---------  ---------
-$
-```
-
-资产净值为 85 块。
-
-## 使用 Fava 展示账本
-
-虽然 beancount 的命令提供了 beancount 的完整功能，但日常我更多使用 fava 这个图形界面。
-
-在 fava 中已经预设了“资产负债表”，“损益表” 等常见财务用表，并且提供图表用于资产可视化，也具备多账本管理、预算管理等 beancount 自己没有的能力，更方便一些。
-
-日常使用时，只需要在 beancount 账本文件中正常记账，然后调用 fava 运行即可。比如账本入口文件是 main.bean，那么在终端中运行：
-
-```bash
-$ fava main.bean
-```
-
-默认可以在浏览器 https://127.0.0.1:5000 访问 fava 主界面：
-
-![]()
-
-当然，实际应用中的账本比这复杂很多，Fava 提供了一个 Demo 站点，你可以在里面看看一个实际账本是如何运作的：[Fava Example](http://fava.pythonanywhere.com/example-with-budgets/balance_sheet/)。
-
-### Fava 预设报表
-
-在 Fava 右侧侧边栏，预设了常用报表，稍微解释一下：
-
-- 损益表：呈现利润、收支、收支详情的报表。你可以在这里看到自己赚的、花的、从哪儿赚的钱，都花在哪儿了。
-- 资产负债表：呈现净值、资产、负债、权益相关的信息。你可以在看到自己的资产净值、资产、负债和权益。
-- 试算表：常用于对账。
-- 日记账：以日期方式排序的流水账。
-- 资产：查看自己的所有资产（Assets）账户
-- 货币：查看所有“货币”对象的走势，例如人民币兑美元走势，需要使用 price 语法告诉 beancount 货币的价格。
-- 事件：查看所有事件。例如一次旅行在账本里表现就是一个事件，用 event 语法定义
-- 统计：整个账本的统计信息，例如账户内有多少笔转账之类。
-
-在侧边栏下方，可以直接使用 Fava 编辑账本和新增交易，也可以从别的 beancount 账本中导入交易。
-
-如果要设定 Fava 选项，例如中文界面，则需要在 main.bean 中加入以下语句
-
-```beancount
-1990-01-01 custom "fava-option" "language" "zh"
-```
-
-然后重启 Fava 即可生效了。更多使用方法，可以点击侧边栏的 “帮助” 了解。
 

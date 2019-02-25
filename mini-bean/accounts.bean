@@ -1,0 +1,15 @@
+1990-01-01 open Assets:Cash:Wallet
+1990-01-01 open Assets:HouseFund:SH         
+1990-01-01 open Assets:Gov:MasterHouseFund   
+1990-01-01 open Assets:DebitCard 		      
+
+1990-01-01 open Income:Master 		           
+
+1990-01-01 open Expenses:Traffic:Taxi
+1990-01-01 open Expenses:Traffic:Public
+1990-01-01 open Expenses:Gov:Tax 		        
+1990-01-01 open Expenses:Gov:Insurance       
+1990-01-01 open Expenses:Gov:MasterInsurance  
+1990-01-01 open Expenses:Householding:IKEA
+
+1990-01-01 open Equity:OpenBalance
