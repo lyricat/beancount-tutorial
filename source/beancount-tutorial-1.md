@@ -1,5 +1,5 @@
 ---
-title: 握着你的手写最简单的 Beancount 账本
+title: 1. 握着你的手写最简单的 Beancount 账本
 brief: 介绍 Beancount 的安装和最简单的账本组成。
 date: 2019-01-10
 tags: ["Beancount", "复式记账", "Beancount 教程"]
