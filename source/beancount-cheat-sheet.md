@@ -8,11 +8,15 @@ tags: ["Beancount", "复式记账", "Beancount 教程"]
 
 ## 基础
 
-账户名称示例：`Assets:US:BofA:Checking`
+账户名称示例：
+
+```beancount
+Assets:US:BofA:Checking
+```
 
 账户类型：
 
-```
+```beancount
 Assets          +
 Liabilities     -
 Income          -
@@ -23,7 +27,7 @@ Equity          -
 
 货币（全大写）：
 
-```
+```beancount
 USD, EUR, CAD, AUD
 GOOG, AAPL, RBF1005
 HOME_MAYST, AIRMILES
