@@ -4,3 +4,6 @@
 - [1. 握着你的手写最简单的 Beancount 账本](beancount-tutorial-1)
 - [2. 查询账本 Beancount 账本](beancount-tutorial-2)
 
+## 资源
+
+- [Beancount 速查表](beancount-cheat-sheet)
