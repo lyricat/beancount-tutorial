@@ -1,5 +1,5 @@
 ---
-title: 2. 查询账本 Beancount 账本
+title: 2. 查询 Beancount 账本
 brief: 使用 Beancount 命令和 Fava 查账
 date: 2019-01-10
 tags: ["Beancount", "复式记账", "Beancount 教程"]
