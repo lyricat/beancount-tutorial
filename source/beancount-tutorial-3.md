@@ -1,5 +1,5 @@
 ---
-title: 3 导入浦发银行信用卡账单
+title: 3. 导入浦发银行信用卡账单
 brief: 使用 Python 脚本导入浦发银行信用卡账单
 date: 2019-04-25
 tags: ["Beancount", "复式记账", "Beancount 教程"]
